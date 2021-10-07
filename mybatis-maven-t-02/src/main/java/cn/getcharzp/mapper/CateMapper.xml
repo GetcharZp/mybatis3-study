@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.getcharzp.cn.getcharzp.mapper.CateMapper">
+    <select id="getCates" resultMap="MyCate">
+        select a.id aid, a.title title, c.id cid, c.name cname from article a, cate c where a.cid = c.id
+    </select>
+    <resultMap id="MyCate" type="Cate">
+        <result column="cid" property="id" />
+        <result column="cname" property="name" />
+        <collection property="articles" ofType="Article">
+            <result column="aid" property="id"/>
+            <result column="title" property="title" />
+        </collection>
+    </resultMap>
+
+</mapper>

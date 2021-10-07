@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+}
+
+group 'cn.getcharzp'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    maven {
+        url 'https://maven.aliyun.com/repository/public/'
+    }
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    // lombok
+    compileOnly 'org.projectlombok:lombok:1.18.20'
+    // mybatis
+    implementation 'org.mybatis:mybatis:3.5.7'
+    // log4j
+    implementation 'log4j:log4j:1.2.17'
+    // mysql-connector-java
+    implementation 'mysql:mysql-connector-java:5.1.47'
+}
